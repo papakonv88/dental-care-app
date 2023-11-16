@@ -1,4 +1,4 @@
-import LandingPage from "dental-care-app/pages/index.js";
+import LandingPage from "./../pages/index.jsx";
 
 function App() {
   return (
