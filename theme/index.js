@@ -7,17 +7,18 @@ const getTheme = createTheme({
         },
         secondary: {
             main: '#FF4E26',
-            dark: '#FF4E27'
+            dark: '#FF4E28'
         },
         background: {
-            default: '#FFFFFF'
+            default: '#FFFFFF',
+            social: '#FFFCEE'
         }
     },
     components: {
         MuiButton: {
             variants: [
                 {
-                    props: { variant: 'nav-filled' },
+                    props: {variant: 'nav-filled'},
                     style: {
                         textTransform: 'none',
                         border: `2px solid #FF4E26`,
@@ -26,31 +27,36 @@ const getTheme = createTheme({
                         color: 'white',
                         padding: '3px 16px',
                         '&:hover': {
-                            background: '#FFFFFF',
-                            color: '#282628',
-                            border: `2px solid #282628`,
+                            color: '#282628'
                         }
                     },
                 },
                 {
-                    props: { variant: 'nav-plain' },
+                    props: {variant: 'nav-plain'},
                     style: {
                         textTransform: 'none',
                         border: `2px solid #282628`,
                         background: 'white',
                         borderRadius: '25px',
                         color: '#282628',
-                        padding: '3px 16px',
+                        padding: '3px 12px',
                         '&:hover': {
-                            background: '#FF4E26',
-                            color: 'white',
-                            border: `2px solid #FF4E26`,
+                            color: '#FF4E26',
                         }
                     },
                 }
             ],
         },
     },
+    typography: {
+        logo: {
+            textTransform: 'uppercase',
+            fontWeight: 'bold'
+        },
+        main: {
+            fontSize: '0.875rem', fontWeight: '500'
+        }
+    }
 });
 
 export default getTheme;
