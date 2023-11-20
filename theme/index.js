@@ -14,7 +14,8 @@ const getTheme = createTheme({
             social: '#FFFCEE'
         },
         dark: {
-            main: '#282628'
+            main: '#282628',
+            secondary: '#7E7D7F'
         }
     },
     components: {

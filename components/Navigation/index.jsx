@@ -2,6 +2,7 @@ import {styled} from '@mui/system';
 import {Button, Stack} from "@mui/material";
 import SegmentIcon from '@mui/icons-material/Segment';
 import Logo from "./Logo/Logo.jsx";
+import AnimationWrapper from "./../../components/animations/AnimatonWrapper.jsx";
 
 const NavWrapper = styled('Stack')({
     width: 'calc(100% - 100px)',
@@ -17,19 +18,23 @@ const NavWrapper = styled('Stack')({
 function Navigation() {
     return (
         <NavWrapper direction={'row'}>
-            <Stack direction={'row'}>
-                <Button variant={'nav-plain'}>Menu</Button>
-                <Button variant={'nav-plain'}>
-                    <SegmentIcon />
-                </Button>
-            </Stack>
-            <Logo />
-            <Stack direction={'row'}>
-                <Button variant={'nav-plain'}>Log In</Button>
-                <Button variant={'nav-filled'}>
-                    Sign Up
-                </Button>
-            </Stack>
+            <AnimationWrapper animate={'fadeDown'}>
+                <Stack direction={'row'}>
+                    <Button variant={'nav-plain'}>Menu</Button>
+                    <Button variant={'nav-plain'}>
+                        <SegmentIcon/>
+                    </Button>
+                </Stack>
+            </AnimationWrapper>
+            <Logo/>
+            <AnimationWrapper animate={'fadeDown'}>
+                <Stack direction={'row'}>
+                    <Button variant={'nav-plain'}>Log In</Button>
+                    <Button variant={'nav-filled'}>
+                        Sign Up
+                    </Button>
+                </Stack>
+            </AnimationWrapper>
         </NavWrapper>
     )
 }

@@ -4,7 +4,7 @@ import SectionFirst from "./../components/SectionFirst/index.jsx";
 
 
 const Wrapper = ({children}) => (
-    <Stack sx={(theme) => ({width: '100%', height: '100%', background: theme.palette.background.default})}>
+    <Stack sx={{width: '100%', height: '100%', background: 'background.default', overflowY: 'hidden'}}>
         {children}
     </Stack>
 )
