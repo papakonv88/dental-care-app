@@ -12,7 +12,7 @@ function Social() {
                 <FacebookIcon sx={{ padding: 1, fontSize: '1.25rem', backgroundColor: 'background.social', borderRadius: '15px', cursor: 'pointer' }}  />
                 <YouTubeIcon sx={{ padding: 1, fontSize: '1.25rem', backgroundColor: 'background.social', borderRadius: '15px',cursor: 'pointer' }}  />
             </Stack>
-            <Typography variant={'main'}>Best Start Up of 2023</Typography>
+            <Typography variant={'secondary'}>Best Start Up of 2023</Typography>
         </Stack>
     )
 }

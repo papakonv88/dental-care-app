@@ -6,7 +6,7 @@ function YourSmile() {
             <Stack direction={'row'} columnGap={2} alignItems={'flex-start'}>
                 <Box sx={{ width: '7px', height: '7px', borderRadius: '50%', backgroundColor: 'secondary.dark' }}/>
             </Stack>
-            <Typography variant={'main'}>Your smile, Our passion</Typography>
+            <Typography variant={'secondary'}>Your smile, Our passion</Typography>
         </Stack>
     )
 }

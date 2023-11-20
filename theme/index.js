@@ -12,6 +12,9 @@ const getTheme = createTheme({
         background: {
             default: '#FFFFFF',
             social: '#FFFCEE'
+        },
+        dark: {
+            main: '#282628'
         }
     },
     components: {
@@ -51,9 +54,12 @@ const getTheme = createTheme({
     typography: {
         logo: {
             textTransform: 'uppercase',
-            fontWeight: 'bold'
+            fontWeight: '500'
         },
         main: {
+            fontSize: '10rem', fontWeight: '400', textTransform: 'uppercase', letterSpacing: '0.3rem'
+        },
+        secondary: {
             fontSize: '0.875rem', fontWeight: '500'
         }
     }
