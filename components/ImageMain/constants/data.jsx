@@ -11,7 +11,7 @@ export const imageData = [
             < SupportAgentIcon/>
         </>)
         ,
-        rotate: '-5'
+        rotate: -5
     },
     {
         title: 'Modern Solutions',
@@ -20,7 +20,7 @@ export const imageData = [
             <EmojiObjectsIcon/>
         </>)
         ,
-        rotate: '-10'
+        rotate: -10
     },
     {
         title: 'Convenience',
@@ -28,7 +28,7 @@ export const imageData = [
         icon: (<>
             <ForumIcon/>
         </>),
-        rotate: '-15'
+        rotate: -15
     },
     {
         title: 'Advanced Technology',
@@ -36,6 +36,6 @@ export const imageData = [
         icon: (<>
             <BiotechIcon/>
         </>),
-        rotate: '-20'
+        rotate: -20
     },
 ]

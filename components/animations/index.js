@@ -12,6 +12,19 @@ export const Animations = {
             duration: 0.5
         }
     },
+    fadeUp: {
+        initial: {
+            y: '100%',
+            opacity: 0
+        },
+        animate: {
+            y: 0,
+            opacity: 1
+        },
+        transition: {
+            duration: 0.5
+        }
+    },
     growLeft: {
         animate: {
             scale: [0 ,1 ,1],
@@ -64,6 +77,41 @@ export const Animations = {
             duration: 1.5,
             repeat: Infinity,
             delay: 0.5
+        }
+    },
+    rotateScale: {
+        initial: {
+            rotate: -45,
+            scale: 0
+        },
+        animate: {
+            rotate: 0,
+            scale: 1
+        },
+        transition: {
+            duration: 0.5
+        }
+    },
+    scaleUp: {
+        initial: {
+            scale: 0
+        },
+        animate: {
+            scale: 1
+        },
+        transition: {
+            duration: 0.5
+        }
+    },
+    imageMain: {
+        initial: {
+            y: 300
+        },
+        animate: {
+            y: 0
+        },
+        transition: {
+            duration: 1.5,
         }
     }
 }

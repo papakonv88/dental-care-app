@@ -1,53 +1,63 @@
-import {Box, Stack, Typography} from "@mui/material";
+import { useEffect } from "react";
+import { Stack } from "@mui/material";
+import ImageCard from "./ImageCard.jsx";
+import { useAnimate } from "framer-motion";
 
-function ImageMain({icon, title, image, rotate}) {
-    return (
-        <Stack direction={'column'} sx={{
-            width: '20%', position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: `translate(-50%, -50%) rotate(${rotate}deg)`,
-        }}>
-            <Box sx={{
-                overflow: 'hidden',
-                height: 0,
-                paddingTop: '133.33%',
-                backgroundColor: 'blue',
-                borderRadius: '25px',
-                background: `url('${image}')`,
-                backgroundSize: 'cover',
-                position: 'relative'
-            }}>
-                <Stack direction={'row'}
-                       sx={{
-                           position: 'absolute',
-                           bottom: '10%',
-                           left: '50%',
-                           transform: `translateX(-50%)`,
-                           opacity: 0.95,
-                           width: '100%',
-                           display: 'flex',
-                           justifyContent: 'center'
-                       }}
-                       alignItems={'center'}>
-                    <Box sx={{
-                        backgroundColor: 'background.default',
-                        padding: 1,
-                        borderRadius: '50%',
-                        height: '25px',
-                        width: '25px',
-                    }}>{icon}</Box>
-                    <Typography
-                        sx={{
-                            fontWeight: 500,
-                            padding: '8px 12px',
-                            backgroundColor: 'background.default',
-                            borderRadius: '25px'
-                        }}>{title}</Typography>
-                </Stack>
-            </Box>
-        </Stack>
-    )
+function ImageMain({ icon, title, image, rotate, idx }) {
+  const [scope, animate] = useAnimate();
+
+  useEffect(() => {
+    const animation = async () => {
+      await animate(
+        scope.current,
+        { transform: `translate(0%, 0%) rotate(${rotate}deg)`, y: 0 },
+        { duration: 1 }
+      );
+
+      await animate(
+        scope.current,
+        {
+          transform: [
+            `translate(0%, 0%) rotate(${rotate}deg)`,
+            `translate(0%, 0%) rotate(${rotate - 10}deg)`,
+            `translate(0%, 0%) rotate(${rotate - 10}deg)`,
+          ],
+        },
+        {
+          duration: 1,
+          times: [0, 0.7, 1],
+          delay: (idx + 1) * 1,
+        }
+      );
+
+      await animate(
+        scope.current,
+        {
+          transform: `translate(0%, -200%) rotate(${rotate - 10}deg)`,
+        },
+        {
+          duration: 0.5,
+        }
+      );
+    };
+
+    animation();
+  }, [rotate, idx]);
+
+  return (
+    <Stack
+      direction={"column"}
+      ref={scope}
+      sx={{
+        width: "20%",
+        position: "absolute",
+        zIndex: 100 - idx, // Trick to bring last items to font
+        transform: `translate(0%, 150%) rotate(-45deg)`,
+      }}
+    >
+      <ImageCard icon={icon} title={title} image={image} />
+    </Stack>
+  );
 }
 
 export default ImageMain;
