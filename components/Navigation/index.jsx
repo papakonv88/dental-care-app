@@ -6,13 +6,13 @@ import AnimationWrapper from "./../../components/animations/AnimatonWrapper.jsx"
 
 const NavWrapper = styled('Stack')({
     width: 'calc(100% - 100px)',
-    position: 'absolute',
+    position: 'fixed',
     top: 0,
     left: 0,
     justifyContent: 'space-between',
     display: 'flex',
     padding: '30px 50px',
-    zIndex: 10
+    zIndex: 101 // Stay on top of everything
 });
 
 function Navigation() {

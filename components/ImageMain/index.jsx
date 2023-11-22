@@ -1,10 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Stack } from "@mui/material";
 import ImageCard from "./ImageCard.jsx";
-import { useAnimate } from "framer-motion";
+import { AnimatePresence, useAnimate } from "framer-motion";
 
 function ImageMain({ icon, title, image, rotate, idx }) {
   const [scope, animate] = useAnimate();
+  const [animationCompleted, setAnimationCompleted] = useState(false);
 
   useEffect(() => {
     const animation = async () => {
@@ -39,24 +40,31 @@ function ImageMain({ icon, title, image, rotate, idx }) {
           duration: 0.5,
         }
       );
+
+      setAnimationCompleted(true);
     };
 
     animation();
-  }, [rotate, idx]);
+  }, []);
 
   return (
-    <Stack
-      direction={"column"}
-      ref={scope}
-      sx={{
-        width: "20%",
-        position: "absolute",
-        zIndex: 100 - idx, // Trick to bring last items to font
-        transform: `translate(0%, 150%) rotate(-45deg)`,
-      }}
-    >
-      <ImageCard icon={icon} title={title} image={image} />
-    </Stack>
+    <AnimatePresence> // Remove elements from React tree, when animation is completed
+      {!animationCompleted ? (
+        <Stack
+          direction={"column"}
+          ref={scope}
+          key={`image_${idx}`}
+          sx={{
+            width: "20%",
+            position: "absolute",
+            zIndex: 100 - idx, // Trick to bring last items to font
+            transform: `translate(0%, 150%) rotate(-45deg)`,
+          }}
+        >
+          <ImageCard icon={icon} title={title} image={image} />
+        </Stack>
+      ) : null}
+    </AnimatePresence>
   );
 }
 

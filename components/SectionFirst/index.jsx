@@ -1,11 +1,12 @@
+import { Stack } from "@mui/material";
+import { styled } from "@mui/system";
+
 import SectionWrapper from "./../SectionWrapper.jsx";
 import Social from "./../../components/Social/index.jsx";
-import { Stack } from "@mui/material";
 import YourSmile from "./../../components/YourSmile/index.jsx";
 import ScrollDown from "./../../components/ScrollDown/index.jsx";
 import ImageMain from "./../../components/ImageMain/index.jsx";
 import { imageData } from "./../../components/ImageMain/constants/data.jsx";
-import { styled } from "@mui/system";
 import QuoteMain from "./../../components/QuoteMain/index.jsx";
 
 const BottomContainer = styled(Stack)({
@@ -17,6 +18,7 @@ const BottomContainer = styled(Stack)({
 });
 
 function SectionFirst() {
+
   return (
     <>
       <SectionWrapper>

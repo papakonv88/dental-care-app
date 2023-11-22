@@ -1,45 +1,26 @@
 import {Typography, Box} from "@mui/material";
 import {motion} from "framer-motion";
+import {Animations} from "./../animations/index.js";
 
 function QuoteMain() {
     const quote = 'Our Advantages';
     const letters = quote.split('');
-
-    const container = {
-        hidden: { },
-        visible: (i = 1) => ({
-            transition: { staggerChildren: 0.05, delayChildren: 0.05 * i, },
-        }),
-    };
-
-    const characterAnimation = {
-        hidden: {
-            opacity: 0,
-            y: 300,
-        },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.5,
-            },
-        },
-    };
+    const { textContainer, characters } = Animations;
 
     return (
        <Box sx={{ overflowY: 'hidden' }}>
         <Typography
             variant={'main'}
             component={motion.div}
-            variants={container}
+            variants={textContainer}
             initial="hidden"
             animate="visible"
         >
             {letters.map((char, idx) => (
                 <motion.span
-                    style={{ display: 'inline-block'}}
-                    key={idx}
-                    variants={characterAnimation}
+                    style={{ display: 'inline-block',  whiteSpace: 'pre' }}
+                    key={`letter_${idx}`}
+                    variants={characters}
                 >
                     {char}
                 </motion.span>

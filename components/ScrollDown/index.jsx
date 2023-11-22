@@ -7,11 +7,13 @@ function ScrollDown() {
         <AnimationWrapper animate={'outerCircle'}>
             <Box sx={(theme) => ({
                 width: '100px',
-                height: '100px',
-                borderRadius: '50%',
-                border: `1px solid ${theme.palette.dark.secondary}`,
+                height: '50px',
+                borderRadius: '50px 50px 0 0',
+                borderTop: `1px solid ${theme.palette.dark.secondary}`,
+                borderLeft: `1px solid ${theme.palette.dark.secondary}`,
+                borderRight: `1px solid ${theme.palette.dark.secondary}`,
                 position: 'absolute',
-                bottom: -20,
+                bottom: 30,
                 left: '50%',
                 transform: 'translate(-50%, 0)',
                 display: 'flex',

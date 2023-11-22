@@ -17,12 +17,15 @@ export const Animations = {
             y: '100%',
             opacity: 0
         },
-        animate: {
+        transition: {
+            duration: 0.5
+        },
+        whileInView: {
             y: 0,
             opacity: 1
         },
-        transition: {
-            duration: 0.5
+        viewport: {
+            once: true
         }
     },
     growLeft: {
@@ -51,18 +54,14 @@ export const Animations = {
         }
     },
     outerCircle: {
-        initial: {
-            opacity: 0,
-            y: -10
-        },
         animate: {
-            opacity: [0, 1, 1],
-            y: [-10, -10, 30],
+            opacity: [0, 1, 1, 1],
+            y: [-10, -10, 30, 30],
         },
         transition: {
-            times: [0, 0.3, 1],
+            times: [0, 0.3, 1, 1],
             duration: 1,
-            delay: 0.2,
+            delay: 0.3,
         }
     },
     innerArrow: {
@@ -84,34 +83,62 @@ export const Animations = {
             rotate: -45,
             scale: 0
         },
-        animate: {
+        transition: {
+            duration: 0.5
+        },
+        whileInView: {
             rotate: 0,
             scale: 1
         },
-        transition: {
-            duration: 0.5
+        viewport: {
+            once: true
         }
     },
     scaleUp: {
         initial: {
             scale: 0
         },
-        animate: {
+        transition: {
+            duration: 0.5
+        },
+        whileInView: {
             scale: 1
+        },
+        viewport: {
+            once: true
+        }
+    },
+    textContainer: {
+        hidden: { },
+        visible: (i = 1) => ({
+            transition: { staggerChildren: 0.05, delayChildren: 0.05 * i, },
+        }),
+    },
+    characters: {
+        hidden: {
+            opacity: 0,
+            y: 300,
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.5,
+            },
+        },
+    },
+    quoteSecond: {
+        initial: {
+            y: 150
         },
         transition: {
             duration: 0.5
-        }
-    },
-    imageMain: {
-        initial: {
-            y: 300
         },
-        animate: {
+        whileInView: {
             y: 0
         },
-        transition: {
-            duration: 1.5,
+        viewport: {
+            once: true
         }
     }
 }

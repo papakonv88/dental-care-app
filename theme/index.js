@@ -62,7 +62,10 @@ const getTheme = createTheme({
         },
         secondary: {
             fontSize: '0.875rem', fontWeight: '500'
-        }
+        },
+        screen: {
+            fontSize: '8rem', fontWeight: '400', textTransform: 'uppercase', letterSpacing: '0.3rem'
+        },
     }
 });
 
