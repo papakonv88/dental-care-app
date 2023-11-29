@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Stack } from "@mui/material";
 
 import Navigation from "./../components/Navigation/index.jsx";
@@ -24,6 +25,10 @@ const Wrapper = ({ children }) => (
 );
 
 function LandingPage() {
+
+    const [activeIdx, setActiveIdx] = useState(0)
+    const handleActiveIdx = (swiper) => setActiveIdx(swiper.activeIndex)
+
   return (
     <Wrapper>
       <Navigation />
@@ -34,6 +39,7 @@ function LandingPage() {
         mousewheel={true}
         modules={[Mousewheel]}
         style={{ width: "100%", height: "100%" }}
+        onActiveIndexChange={handleActiveIdx}
       >
         <SwiperSlide
           style={{ width: "100vw", height: "100%", position: "relative" }}
@@ -43,7 +49,7 @@ function LandingPage() {
         <SwiperSlide
           style={{ width: "100vw", height: "100%", position: "relative" }}
         >
-          <SectionSecond />
+          <SectionSecond isActive={activeIdx === 1} />
         </SwiperSlide>
       </Swiper>
     </Wrapper>

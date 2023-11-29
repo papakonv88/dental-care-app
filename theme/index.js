@@ -66,6 +66,12 @@ const getTheme = createTheme({
         screen: {
             fontSize: '8rem', fontWeight: '400', textTransform: 'uppercase', letterSpacing: '0.3rem'
         },
+        getStarted: {
+            textTransform: 'uppercase',
+            fontWeight: '500',
+            color: '#FFFFFF',
+            textAlign: 'center'
+        }
     }
 });
 

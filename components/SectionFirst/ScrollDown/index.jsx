@@ -1,6 +1,6 @@
 import {Box} from "@mui/material";
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import AnimationWrapper from "./../../components/animations/AnimatonWrapper.jsx";
+import AnimationWrapper from "./../../../components/animations/AnimatonWrapper.jsx";
 
 function ScrollDown() {
     return (

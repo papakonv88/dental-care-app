@@ -1,6 +1,6 @@
 import {Typography, Box} from "@mui/material";
 import {motion} from "framer-motion";
-import {Animations} from "./../animations/index.js";
+import {Animations} from "./../../../components/animations/index.js";
 
 function QuoteMain() {
     const quote = 'Our Advantages';

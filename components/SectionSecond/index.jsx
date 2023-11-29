@@ -3,7 +3,8 @@ import Social from "./../../components/Social/index.jsx";
 import { Stack } from "@mui/material";
 import YourSmile from "./../../components/YourSmile/index.jsx";
 import { styled } from "@mui/system";
-import QuoteSecond from "./../../components/QuoteSecond/index.jsx";
+import QuoteSecond from "./QuoteSecond/index.jsx";
+import GetStarted from "./GetStarted/index.jsx";
 
 const BottomContainer = styled(Stack)({
     position: "absolute",
@@ -11,15 +12,17 @@ const BottomContainer = styled(Stack)({
     right: 0,
     width: "100%",
     justifyContent: "space-between",
+    alignItems: 'flex-end'
 });
 
-function SectionSecond() {
+function SectionSecond({ isActive }) {
     return (
         <>
             <SectionWrapper>
-                <QuoteSecond />
+                <QuoteSecond isActive={isActive} />
                 <BottomContainer direction={"row"}>
                     <YourSmile />
+                 <GetStarted />
                     <Social />
                 </BottomContainer>
             </SectionWrapper>
