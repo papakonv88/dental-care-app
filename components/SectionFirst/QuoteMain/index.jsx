@@ -1,33 +1,9 @@
-import {Typography, Box} from "@mui/material";
-import {motion} from "framer-motion";
-import {Animations} from "./../../../components/animations/index.js";
+import WaveText from "./../../../components/WaveText/index.jsx";
 
-function QuoteMain() {
-    const quote = 'Our Advantages';
-    const letters = quote.split('');
-    const { textContainer, characters } = Animations;
+function QuoteMain({ isActive }) {
+  const quote = "Our Advantages";
 
-    return (
-       <Box sx={{ overflowY: 'hidden' }}>
-        <Typography
-            variant={'main'}
-            component={motion.div}
-            variants={textContainer}
-            initial="hidden"
-            animate="visible"
-        >
-            {letters.map((char, idx) => (
-                <motion.span
-                    style={{ display: 'inline-block',  whiteSpace: 'pre' }}
-                    key={`letter_${idx}`}
-                    variants={characters}
-                >
-                    {char}
-                </motion.span>
-            ))}
-        </Typography>
-       </Box>
-    )
+  return <WaveText textStyle={"main"} quote={quote} isActive={isActive} />;
 }
 
 export default QuoteMain;

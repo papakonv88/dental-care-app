@@ -70,8 +70,26 @@ const getTheme = createTheme({
             textTransform: 'uppercase',
             fontWeight: '500',
             color: '#FFFFFF',
-            textAlign: 'center'
-        }
+            textAlign: 'center',
+            fill: '#FFFFFF'
+        },
+        imageCard: {
+            fontWeight: 500,
+            padding: "12px 12px",
+            backgroundColor: "#FFFFFF",
+            borderRadius: "25px",
+        },
+        photoCard: {
+            fontWeight: 500,
+            padding: "10px 12px",
+            backgroundColor: "transparent",
+            borderRadius: "25px",
+            color: '#FFFFFF',
+            border: '2px solid #FFFFFF'
+        },
+        small: {
+            fontSize: '4rem', fontWeight: '400', textTransform: 'uppercase', letterSpacing: '0.3rem'
+        },
     }
 });
 

@@ -175,4 +175,57 @@ export const Animations = {
       },
     },
   },
+  getStarted: {
+    initial: {
+      y: 100,
+      opacity: 0
+    },
+    transition: {
+      duration: 0.5,
+      delay: 0.5
+    },
+    whileInView: {
+      y: 0,
+      opacity: 1
+    },
+    viewport: {
+      once: true,
+    },
+  },
+  imageSlide1: {
+    initial: {
+      y: 24,
+      opacity: 1,
+      rotateY: 45
+    },
+    transition: {
+      times: [0, 0.5, 1],
+      duration: 5,
+    },
+    whileInView: {
+      y: [24, 24, -400],
+      opacity: [1 , 1, 1],
+      rotateY: [90, 0, 0]
+    },
+    viewport: {
+      once: true,
+    },
+  },
+  imageSlide2: {
+    initial: {
+      y: '-55%',
+      opacity: 1
+    },
+    transition: {
+      times: [0, 0.5, 1],
+      duration: 5,
+    },
+    whileInView: {
+      y: ['-55%', '-55%', '0%'],
+      opacity: [1 , 1, 1]
+    },
+    viewport: {
+      once: true,
+    },
+  },
 };

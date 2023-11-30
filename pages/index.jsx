@@ -4,6 +4,7 @@ import { Stack } from "@mui/material";
 import Navigation from "./../components/Navigation/index.jsx";
 import SectionFirst from "./../components/SectionFirst/index.jsx";
 import SectionSecond from "./../components/SectionSecond/index.jsx";
+import SectionThrid from "./../components/SectionThird/index.jsx";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel } from "swiper/modules";
@@ -25,9 +26,8 @@ const Wrapper = ({ children }) => (
 );
 
 function LandingPage() {
-
-    const [activeIdx, setActiveIdx] = useState(0)
-    const handleActiveIdx = (swiper) => setActiveIdx(swiper.activeIndex)
+  const [activeIdx, setActiveIdx] = useState(0);
+  const handleActiveIdx = (swiper) => setActiveIdx(swiper.activeIndex);
 
   return (
     <Wrapper>
@@ -41,15 +41,14 @@ function LandingPage() {
         style={{ width: "100%", height: "100%" }}
         onActiveIndexChange={handleActiveIdx}
       >
-        <SwiperSlide
-          style={{ width: "100vw", height: "100%", position: "relative" }}
-        >
-          <SectionFirst />
+        <SwiperSlide>
+          <SectionFirst isActive={activeIdx === 0} />
         </SwiperSlide>
-        <SwiperSlide
-          style={{ width: "100vw", height: "100%", position: "relative" }}
-        >
+        <SwiperSlide>
           <SectionSecond isActive={activeIdx === 1} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <SectionThrid isActive={activeIdx === 2} />
         </SwiperSlide>
       </Swiper>
     </Wrapper>

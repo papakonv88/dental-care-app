@@ -4,9 +4,9 @@ function SectionWrapper({children}) {
     return (
         <Stack sx={{
             position: 'relative',
-            height: 'calc(100vh - 100px)',
+            height: 'calc(100vh - 130px)',
             width: 'calc(100% - 100px)',
-            margin: '50px',
+            margin: '80px 50px 50px 50px',
             justifyContent: 'center',
             alignItems: 'center'
         }}>
