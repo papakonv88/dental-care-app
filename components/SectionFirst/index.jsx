@@ -10,7 +10,7 @@ function SectionFirst({ isActive }) {
   return (
     <>
       <SectionWrapper>
-        {imageData.map((data, idx) => (
+        {isActive && imageData.map((data, idx) => (
           <ImageMain
             key={`main_image_${idx}`}
             icon={data.icon}

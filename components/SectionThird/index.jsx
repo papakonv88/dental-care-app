@@ -12,7 +12,7 @@ const StyledContainer = styled(Stack)({
   alignSelf: "flex-start",
   flexDirection: "column",
   justifyContent: "center",
-  paddingLeft: '16px'
+  paddingLeft: "16px",
 });
 
 const SliderContainer = styled(Stack)({
@@ -23,8 +23,7 @@ const SliderContainer = styled(Stack)({
   right: 0,
   flexDirection: "row",
   columnGap: 24,
-  alignContent: "flex-end",
-  alignItems: "flex-end",
+  justifyContent: 'flex-end',
   paddingLeft: "48px",
 });
 
@@ -35,18 +34,18 @@ function SectionThrid({ isActive }) {
     <>
       <SectionWrapper colunGap={50} direction={"row"}>
         <StyledContainer>
-          {text.map((row, idx) => (
-            <WaveText
-              key={`row_${idx}`}
-              quote={row}
-              textStyle={"small"}
-              isActive={isActive}
-            />
-          ))}
+            {text.map((row, idx) => (
+              <WaveText
+                key={`row_${idx}`}
+                quote={row}
+                textStyle={"small"}
+                isActive={isActive}
+              />
+            ))}
           <Footer />
         </StyledContainer>
         <SliderContainer>
-          <PhotoSlider />
+          <PhotoSlider isActive={isActive} />
         </SliderContainer>
       </SectionWrapper>
     </>

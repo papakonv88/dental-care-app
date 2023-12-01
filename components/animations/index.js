@@ -90,9 +90,6 @@ export const Animations = {
       rotate: 0,
       scale: 1,
     },
-    viewport: {
-      once: true,
-    },
   },
   scaleUp: {
     initial: {
@@ -103,9 +100,6 @@ export const Animations = {
     },
     whileInView: {
       scale: 1,
-    },
-    viewport: {
-      once: true,
     },
   },
   textContainer: {
@@ -188,44 +182,5 @@ export const Animations = {
       y: 0,
       opacity: 1
     },
-    viewport: {
-      once: true,
-    },
-  },
-  imageSlide1: {
-    initial: {
-      y: 24,
-      opacity: 1,
-      rotateY: 45
-    },
-    transition: {
-      times: [0, 0.5, 1],
-      duration: 5,
-    },
-    whileInView: {
-      y: [24, 24, -400],
-      opacity: [1 , 1, 1],
-      rotateY: [90, 0, 0]
-    },
-    viewport: {
-      once: true,
-    },
-  },
-  imageSlide2: {
-    initial: {
-      y: '-55%',
-      opacity: 1
-    },
-    transition: {
-      times: [0, 0.5, 1],
-      duration: 5,
-    },
-    whileInView: {
-      y: ['-55%', '-55%', '0%'],
-      opacity: [1 , 1, 1]
-    },
-    viewport: {
-      once: true,
-    },
-  },
+  }
 };
